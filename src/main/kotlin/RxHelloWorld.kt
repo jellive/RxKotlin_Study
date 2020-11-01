@@ -13,6 +13,17 @@ import java.util.concurrent.TimeUnit
 
 fun main() {
     val compositeDisposable = CompositeDisposable()
+    /*
+      Disposable을 저장하는 Container
+    Disposable들을 한꺼번에 dispose할 때 사용
+
+    add, addAll 함수로 Disposable을 추가
+    clear, dispose 함수로 dispose 처리
+    clear는 CompositeDisposable 재사용 가능
+    dispose는 CompositeDisposable 재사용 불가능
+    add하는 시점에 dispose 시켜버림
+     */
+
     val disposable1 = Observable.just(1, 2).subscribe{println(it)}
     compositeDisposable.add(disposable1)
     compositeDisposable.clear() // clear는 compositeDisposable를 초기화화만 한다.
