@@ -6,4 +6,6 @@ fun main() {
     bs.onNext(1)
     bs.onNext(2)
     bs.onComplete()
+
+
 }
